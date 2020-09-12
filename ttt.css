@@ -1,0 +1,118 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --box-size: 150px;
+  --mark-size: calc(var(--box-size) * 0.9);
+}
+
+body {
+  margin: 0;
+}
+
+.tttboard {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(3, auto);
+}
+
+.box {
+  width: var(--box-size);
+  height: var(--box-size);
+  background-image: linear-gradient(
+    rgba(221, 82, 82, 0.363),
+    rgba(0, 0, 0, 0.185)
+  );
+  border: 1px solid whitesmoke;
+  border-radius: 10px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.box.x,
+.box.c {
+  cursor: not-allowed;
+}
+
+.box.x::before,
+.box.x::after {
+  content: "";
+  position: absolute;
+  width: calc(var(--mark-size) * 0.15);
+  height: var(--mark-size);
+  background-color: black;
+}
+
+.box.x::before {
+  transform: rotate(45deg);
+}
+
+.box.x::after {
+  transform: rotate(-45deg);
+}
+
+.box.c::before,
+.box.c::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+
+.box.c::before {
+  width: var(--mark-size);
+  height: var(--mark-size);
+  background-color: black;
+}
+
+.box.c::after {
+  width: calc(var(--mark-size) * 0.7);
+  height: calc(var(--mark-size) * 0.7);
+  background-image: linear-gradient(
+    rgba(248, 205, 205, 0.363),
+    rgba(219, 216, 216, 0.185)
+  );
+}
+
+.feedback {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 40px;
+  flex-direction: column;
+}
+
+.feedback button {
+  font-size: 30px;
+  background-color: rgb;
+  border: none;
+  border-radius: 7px;
+  padding: 8px 5px;
+  cursor: pointer;
+}
+
+.feedback button:hover {
+  background-color: firebrick;
+  color: white;
+}
+
+.feedback.show {
+  display: flex;
+}
