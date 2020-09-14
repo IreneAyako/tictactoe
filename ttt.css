@@ -11,6 +11,7 @@
 
 body {
   margin: 0;
+  background-image: linear-gradient(rgb(150, 150, 248), rgb(71, 71, 71));
 }
 
 .tttboard {
@@ -79,8 +80,8 @@ body {
   width: calc(var(--mark-size) * 0.7);
   height: calc(var(--mark-size) * 0.7);
   background-image: linear-gradient(
-    rgba(248, 205, 205, 0.363),
-    rgba(219, 216, 216, 0.185)
+    rgba(247, 221, 221, 0.363),
+    rgba(233, 232, 232, 0.185)
   );
 }
 
@@ -91,7 +92,10 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.9),
+    rgba(173, 173, 173, 0.9)
+  );
   justify-content: center;
   align-items: center;
   color: white;
