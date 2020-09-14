@@ -41,7 +41,7 @@ function clicker(e) {
   const currentClass = cTurn ? C_CLASS : X_CLASS;
   //place x and circle
   place(box, currentClass);
-  //win
+  //win, draw and turns
   if (win(currentClass)) {
     endGame(false);
   } else if (draw()) {
@@ -49,9 +49,6 @@ function clicker(e) {
   } else {
     swap();
   }
-  //draw
-  //turns
-  //hover();
 }
 
 function endGame(draw) {
@@ -76,16 +73,6 @@ function place(box, currentClass) {
 function swap() {
   cTurn = !cTurn;
 }
-
-/*function hover() {
-  tttboard.classList.remove(X_CLASS);
-  tttboard.classList.remove(C_CLASS);
-  if (cTurn) {
-    tttboard.classList.add(C_CLASS);
-  } else {
-    tttboard.classList.add(X_CLASS);
-  }
-}*/
 
 function win(currentClass) {
   return WIN_COMBOS.some((combination) => {
